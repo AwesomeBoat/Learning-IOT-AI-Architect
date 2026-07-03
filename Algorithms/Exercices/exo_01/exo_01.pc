@@ -1,0 +1,16 @@
+Algorithme Inversion_var
+DEBUT
+    Variable a, b, temp : Entier
+    a = 5
+    b = 7
+
+    Ecrire("a vaut "+ a +" et b vaut" + b)
+    
+    temp = a 
+    a = b 
+    b = temp 
+    
+    Ecrire("a vaut "+ a +" et b vaut" + b)
+
+    
+FIN

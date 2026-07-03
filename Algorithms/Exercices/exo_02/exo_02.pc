@@ -1,0 +1,9 @@
+Algorithme getAndDisplayName
+DEBUT
+    Variable last_name, first_name : Chaine
+    Read(last_name)
+    Read(first_name)
+
+    WRITE("Bonjour "+ first_name + " " + last_name)
+
+FIN

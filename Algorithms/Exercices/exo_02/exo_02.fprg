@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="exo_02"/>
+        <attribute name="authors" value="e.vervaeren"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-30 02:14:26 "/>
+        <attribute name="created" value="ZS52ZXJ2YWVyZW47R09TVkRJMzAxOzIwMjYtMDYtMzA7IjAyOjEyOjE4ICI7MjkxNw=="/>
+        <attribute name="edited" value="ZS52ZXJ2YWVyZW47R09TVkRJMzAxOzIwMjYtMDYtMzA7IjAyOjE0OjI2ICI7MTszMDI2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName, firstName" type="String" array="False" size=""/>
+            <input variable="lastName"/>
+            <input variable="firstName"/>
+            <output expression="&quot;Bonjour &quot; &amp; firstName &amp; &quot; &quot; &amp; lastName" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

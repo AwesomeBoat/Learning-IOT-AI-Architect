@@ -1,0 +1,395 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "PseudoCode",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#meta"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},		
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#bools"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.pc",
+					"match": "\\/\\/.*"
+				},
+				{
+					"name": "comment.block.pc",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.pc",
+					"match": "\\b(Algorithme|DEBUT|FIN|Variable|Constante|PROCEDURE|FONCTION|RENVOIE|DE|À|PAR)\\b"
+				},
+				{
+					"match": "/?(\\S+/)+\\S*",
+					"name": "string.path"
+				},
+				
+				{
+					"name": "keyword.operator.logical.pc",
+					"match": "(ET|OU|!|&&|\\|\\|)"
+				},
+				{
+					"explanation": "version specification",
+					"match": "(<|<=|!=|==|>=|>|===)",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.comparison"
+						}
+					}
+				},
+				{
+					"match": "(=|[<\\-]|\\+=|\\-=|\\|=|\\^=|\\*=|/=|:=|%=)",
+					"name": "keyword.operator.assignment.pc"
+				},
+				{
+						"match": "//.*",
+						"name": "comment.line.number-sign"
+				},
+				
+				{
+					"name": "keyword.control.loop.pc",
+					"match": "\\b(TANTQUE|FAIRE|FINTQ|POUR|FINP)\\b"
+				},
+				{
+					"name": "keyword.control.conditional.pc",
+					"match": "\\b(SI|ALORS|FINSI|SINONSI|SINON)\\b"
+				},
+				{
+					"name": "keyword.control.switch.pc",
+					"match": "\\b(SELONQUE|VAUT|FINSQ)\\b"
+				},
+				{
+					"name": "keyword.declaration.function.pc",
+					"match": "(?i)\\b(FONCTION|PROCEDURE)\\b"
+				},
+				{
+					"name": "meta.function-call.pc",
+					"match": "([a-zA-Z_][a-zA-Z0-9_]*)(?= *\\(.*?\\))",
+					"captures": {
+						"1": {
+							"name": "entity.name.function.pc"
+						}
+					}
+				},
+				{
+					"name": "storage.type.boolean.pc",
+					"match": "(?i)\\b(Booleen)\\b"
+				},
+				{
+					"name": "storage.type.string.pc",
+					"match": "(?i)\\b(Chaine)\\b"
+				},
+				{
+					"name": "storage.type.numeric.integer.pc",
+					"match": "(?i)\\b(Entier)\\b"
+				},
+				{
+					"name": "storage.type.numeric.floating-point.pc",
+					"match": "(?i)\\b(Reel)\\b"
+				},
+				{
+					"name": "storage.type.object.array.pc",
+					"match": "(?i)\\b(Tableau)\\b"
+				}
+					
+						
+			]
+		},
+		"meta": {
+			"patterns": [
+				{
+					"name": "meta.function.pc",
+					"begin": "(?i)\\b((FONCTION|PROCEDURE)) ([a-zA-Z_][a-zA-Z0-9_]*)\\(((.*?))\\) *(?:\\{|(do))",
+					"end": "(?i)(?:\\}|(end))",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.declaration.function.pc"
+						},
+						"2": {
+							"name": "storage.type.function.pc"
+						},
+						"3": {
+							"name": "entity.name.function.pc"
+						},
+						"4": {
+							"name": "meta.parameters.pc"
+						},
+						"5": {
+							"name": "variable.parameter.pc"
+						},
+						"6": {
+							"name": "keyword.control.pc"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.pc"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comments"
+						},
+						{
+							"include": "#meta"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#entities"
+						},
+						{
+							"include": "#storage"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#variables"
+						},
+						{
+							"include": "#numbers"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#bools"
+						}
+					]
+				},
+				{
+					"name": "meta.class.pseudocode",
+					"begin": "(?i)\\b((class)) ([a-zA-Z_][a-zA-Z0-9_]*) *(?:(extends) *([a-zA-Z_][a-zA-Z0-9_]*))? *(?:\\{|(do))",
+					"end": "(?i)(?:\\}|(end))",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.declaration.class.pseudocode"
+						},
+						"2": {
+							"name": "storage.type.class.pseudocode"
+						},
+						"3": {
+							"name": "entity.name.type.class.pseudocode"
+						},
+						"4": {
+							"name": "storage.modifier.pseudocode"
+						},
+						"5": {
+							"name": "entity.other.inherited-class.pseudocode"
+						},
+						"6": {
+							"name": "keyword.control.pseudocode"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.pseudocode"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#meta"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#entities"
+						},
+						{
+							"include": "#storage"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#variables"
+						},
+						{
+							"include": "#numbers"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#bools"
+						}
+					]
+				},
+				{
+					"name": "meta.struct.pseudocode",
+					"begin": "(?i)\\b((struct)) ([a-zA-Z_][a-zA-Z0-9_]*) *(?:\\{|(do))",
+					"end": "(?i)(?:\\}|(end))",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.declaration.struct.pseudocode"
+						},
+						"2": {
+							"name": "storage.type.struct.pseudocode"
+						},
+						"3": {
+							"name": "entity.name.type.struct.pseudocode"
+						},
+						"4": {
+							"name": "storage.modifier.pseudocode"
+						},
+						"5": {
+							"name": "keyword.control.pseudocode"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.pseudocode"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#meta"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#entities"
+						},
+						{
+							"include": "#storage"
+						},
+						{
+							"include": "#keywords"
+						},
+						{
+							"include": "#variables"
+						},
+						{
+							"include": "#numbers"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#bools"
+						}
+					]
+				}
+			]
+		},
+		"storage": {
+			"patterns": [
+				{
+					"name": "storage.type.function.pc",
+					"match": "(?i)\\b(FONCTION|PROCEDURE)\\b"
+				},
+				{
+					"name": "storage.type.boolean.pc",
+					"match": "(?i)\\b(Booleen)\\b"
+				},
+				{
+					"name": "storage.type.string.pc",
+					"match": "(?i)\\b(Chaine)\\b"
+				},
+				{
+					"name": "storage.type.numeric.pc",
+					"match": "(?i)\\b(Entier|Reel)\\b"
+				},
+				{
+					"name": "storage.type.object.array.pc",
+					"match": "(?i)\\b(Tableau)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.pc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.pc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.integer.pc",
+					"match": "\\b[0-9]+(?![0-9]*\\.)\\b"
+				},
+				{
+					"name": "constant.numeric.float.pc",
+					"match": "\\b[0-9]+\\.[0-9]+\\b"
+				}
+			]
+		},
+		"bools": {
+			"patterns": [{
+				"name": "constant.language.pc",
+				"match": "(?i)\\b(true|false|null)\\b"
+			}]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.function.pc",
+					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?= *\\()\\b"
+				},
+				{
+					"name": "variable.other.pc",
+					"match": "[a-zA-Z_][a-zA-Z0-9_]*"
+				},
+				{
+					"name": "variable.parameter.pc",
+					"match": "(?i)(?<=function [a-zA-Z0-9_]\\().*?(?=\\))"
+				},
+				{
+					"name": "variable.parameter.pc",
+					"match": "(?i)(?<=procedure [a-zA-Z0-9_]\\().*?(?=\\))"
+				}
+			]
+		},
+		"operators": {
+			"comment": "Note that the order here is very important!",
+			"patterns": [				
+				{
+					"match": "(\\+|\\-|\\*|/|%|&)",
+					"name": "keyword.operator.arithmetic.pc"
+				}		
+				
+			]
+		}
+	},
+	"scopeName": "source.pc"
+}

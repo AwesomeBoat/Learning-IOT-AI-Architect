@@ -1,0 +1,33 @@
+// Exercice : Trouver le deuxième plus grand élément
+
+// Objectif : Parcourir le tableau une seule fois.
+
+// Défi : Gérer les doublons et les tableaux très petits.
+
+
+
+Algorithme scndBigger
+DEBUT
+    Variable myArray : Entier
+    Variable Biggest : Entier
+    Variable scndBig : Entier
+
+    // Itérer tous les éléments de la liste
+    LOOP(range len(myArray))( // for in
+    
+        SI actualElem > Biggest ALORS
+            biggest = actualElem
+            //Sortir de l'itération
+        FINSI
+
+        ET SI actualElem > scndBig ALORS
+            scndBig = actualElem
+        FINSI
+        
+    )
+
+    ECRIRE("The second biggest number is : ")
+
+
+
+FIN

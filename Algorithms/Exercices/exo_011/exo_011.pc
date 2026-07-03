@@ -1,0 +1,32 @@
+Algorithme Appreciation
+DEBUT
+    Variable note : Entier
+    Variable run : Bool
+    Variable running = False
+    DEMANDER(note)
+
+    SI 0 > note > 20 ALORS
+        ECRIRE("Erreur, note non valide")
+        RELANCER(Appreciation)
+    FINSI
+
+    SI note <= 5 ALORS
+        ECRIRE("Très Mauvais")
+    FINSI
+
+    SI note < 10 ALORS
+        ECRIRE("Mauvais")
+    FINSI
+
+    SI 10 < note < 15 ALORS
+        ECRIRE("Bon")
+    FINSI
+
+    SI 15 <= note ALORS
+        ECRIRE("Très Bon")
+    FINSI
+    
+
+    
+    
+FIN

@@ -1,0 +1,13 @@
+// Avoir un tableau d'entrée
+// iterate each element (n) of the array
+    // Check if it's last element
+        // put the value to index 0 and continue
+    // Save the n+1 index 
+    // Assign the n+1 index with the current element
+
+
+
+Algorithme RightRotation
+DEBUT
+    
+FIN

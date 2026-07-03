@@ -1,0 +1,42 @@
+{
+    "name": "pseudocode",
+    "displayName": "PseudoCode",
+    "description": "Langage pseudo code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "publisher": "geertsmel",
+    "author": {
+        "name": "Melanie Geerts"
+    },
+    "license" : "GPLv3",
+    "homepage": "https://github.com/geertsmel/pseudocode",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/geertsmel/pseudocode"
+    },
+    "icon": "images/logo_mini.png",
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "pc",
+            "aliases": ["PseudoCode", "pc"],
+            "extensions": [".pc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "pc",
+            "scopeName": "source.pc",
+            "path": "./syntaxes/pc.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "language": "pc",
+                "path": "./snippets/pc.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+Algorithme SuiteSyracuse
+DEBUT
+    Variable nbreDepart : Entier
+    Variable nbrePrecedent : Entier
+
+    LOOP condition nbreDepart > 1(
+        ECRIRE(nbreDepart)
+        nbrePrecedent = nbreDepart//2
+        ECRIRE(nbrePrecedent)
+        nbreDepart = nbreDepart + nbrePrecedent
+
+    )
+FIN

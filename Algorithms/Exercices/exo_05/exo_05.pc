@@ -1,0 +1,10 @@
+Algorithme secConverter
+DEBUT
+    Variable in_sec, out_sec, out_min, out_hour : Entier
+    Read(in_sec)
+    out_days = in_sec DIV 3600*24
+    out_hour = (in_sec - (out_days*3600*24)) DIV 3600
+    out_min = (in_sec - (out_days * 3600 * 24) - (out_hour*3600)) DIV 60
+    out_sec = (in_sec - (out_days * 3600 * 24) - (out_hour*3600) - (out_min*60))
+    Write(in_sec)
+FIN

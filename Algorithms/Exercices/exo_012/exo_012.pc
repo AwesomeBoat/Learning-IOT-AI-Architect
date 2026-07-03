@@ -1,0 +1,19 @@
+Algorithme ConvertToSecond
+DEBUT
+    Variable sec: Entier
+    Variable hours : Entier
+    Variable min : Entier
+    Variable days : Entier
+    Variable sec2: Entier
+    Variable hours2 : Entier
+    Variable min2 : Entier
+    Variable days2 : Entier
+
+    Variable totalSec : Entier
+    Variable totalSec2 : Entier
+
+    totalSec = sec + hours*3600 + min *60 + days * 3600*24
+    totalSec2 = sec2 + hours2*3600 + min2 *60 + days2 * 3600*24
+    
+    ECRIRE("La différence entre les deux est de : ")
+FIN

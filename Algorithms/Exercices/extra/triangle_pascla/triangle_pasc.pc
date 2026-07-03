@@ -1,0 +1,18 @@
+Algorithme triangle_pascal
+DEBUT
+    Variable nbreBase : Entier
+    CHECKERROR(nbreBase)
+
+    LOOP condition : nbreBase > 1(
+        ECRIRE(nbreBase)
+        SI nbreBase%2==0 ALORS
+            nbreBase //= 2
+        FINSI
+
+        SINON
+            nbreBase=nbreBase*3+1
+        
+    
+    )
+
+FIN

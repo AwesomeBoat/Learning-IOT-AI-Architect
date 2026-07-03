@@ -1,0 +1,140 @@
+{
+    "algo": {
+        "prefix": "algo",
+        "body": [
+            "Algorithme ${nomAlgo}",
+            "DEBUT",
+            "\t${0}",
+            "FIN"
+        ],
+        "description": "Débuter un algorithme"
+     },
+     "variable": {
+        "prefix": "variable",
+        "body": [
+            "Variable ${1:nomVariable} : ${2|Entier,Reel,Chaine,Booleen,Tableau|}"
+        ],
+        "description": "Déclarer une variable"
+     },
+     "de": {
+        "prefix": "de",
+        "body": [
+            "de ${1|Entier,Reel,Chaine,Booleen|}[${2:taille}]"
+        ],
+        "description": "Spécifier le type et la taille du tableau"
+     },
+     "constante": {
+        "prefix": "constante",
+        "body": [
+            "Constante ${NOM_CONSTANTE} = ${valeurConstante}"
+        ],
+        "description": "Déclarer une constante"
+     },
+     "ecrire": {
+        "prefix": "ecrire",
+        "body": [
+            "Ecrire(${nomVariable})"
+        ],
+        "description": "Utiliser l'instruction écrire à l'écran"
+     },
+     "lire": {
+        "prefix": "lire",
+        "body": [
+            "Lire(${nomVariable})"
+        ],
+        "description": "Utiliser l'instruction lire au clavier"
+     },
+    "SI": {
+        "prefix": "SI",
+        "body": [
+            "SI ${condition} ALORS",
+            "\t${instructions}",
+            "FINSI",
+            "$0"
+        ],
+        "description": "Insérer un ordre SI"
+     },
+     "SINONSI": {
+        "prefix": "SINONSI",
+        "body": [
+            "SINONSI ${condition} ALORS",
+            "\t${instructions}",
+            "$0"
+        ],
+        "description": "Insérer un ordre SINONSI"
+     },
+     "SINON": {
+        "prefix": "SINON",
+        "body": [
+            "SINON",
+            "\t${instructions}",
+            "$0"
+        ],
+        "description": "Insérer un ordre SINON"
+     },
+     "SELONQUE": {
+        "prefix": "SELONQUE",
+        "body": [
+            "SELONQUE ${nomVariable} VAUT",
+            "\t${valeur1} : ${instructions1}",
+            "\t${valeur2} : ${instructions2}",
+            "\tSINON : ${instructions3}",
+            "FINSQ",
+            "$0"
+        ],
+        "description": "Insérer un ordre SELONQUE"
+     },
+     "TANTQUE": {
+        "prefix": "TANTQUE",
+        "body": [
+            "TANTQUE ${condition} FAIRE",
+            "\t${instructions}",
+            "FINTQ",
+            "$0"
+        ],
+        "description": "Insérer un boucle TANTQUE"
+     },
+     "FAIRE": {
+        "prefix": "FAIRE",
+        "body": [
+            "FAIRE",
+            "\t${instructions}",
+            "TANTQUE ${condition} FINTQ",
+            "$0"
+        ],
+        "description": "Insérer un boucle TANTQUE"
+     },
+     "POUR": {
+        "prefix": "POUR",
+        "body": [
+            "POUR ${nomVariable} DE ${valeurDepart} À ${valeurFinComprise} [PAR ${pas}] FAIRE",
+            "\t${instructions}",
+            "FINP",
+            "$0"
+        ],
+        "description": "Insérer un boucle TANTQUE"
+     },
+     "PROCEDURE": {
+        "prefix": "PROCEDURE",
+        "body": [
+            "PROCEDURE ${1:nomProcedure}(${2})",
+            "DEBUT",
+            "\t${3:instructions}",
+            "FIN",
+            "$0"
+        ],
+        "description": "Définir une PROCEDURE"
+     },
+     "FONCTION": {
+        "prefix": "FONCTION",
+        "body": [
+            "FONCTION ${1:nomFonction}(${2}) : ${3|Entier,Reel,CHaine,Booleen|}",
+            "DEBUT",
+            "\t${4:instructions}",
+            "\tRENVOIE ${5:variable}",
+            "FIN",
+            "$0"
+        ],
+        "description": "Définir une FONCTION"
+     }
+}
