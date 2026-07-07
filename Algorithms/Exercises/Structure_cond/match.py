@@ -18,3 +18,13 @@ jour = 0
 #         print("instructions3")
 #     case _:
 #         print("case par défaut")
+
+tb =[
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0]
+    ]
+
+print(tb[0][1])

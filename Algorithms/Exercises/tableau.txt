@@ -1,0 +1,14 @@
+a l'initialisation d'un tableau (en prog, pas python), 
+on définit sa taille et elle ne changera pas
+
+en pseudo code : variable : Tableau[3] de type
+
+python => tab = list() / tab = []
+
+// Ajouter un element dans une liste python
+
+tab.append("xxx")
+tab+="xxx"
+
+
+[start:stop:step]

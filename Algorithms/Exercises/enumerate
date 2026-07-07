@@ -1,0 +1,7 @@
+// Boucle for avec enumerate
+
+fo i, v in enumerate(tab)
+    print(i,v)
+
+i => index
+v => value 
