@@ -1,0 +1,209 @@
+15.Restaurant chez Léon
+
+Dans un restaurant, on sert différents plats. La carte change toutes les semaines. Chaque
+
+plat a un nom qui l’identifie. Au sein d’une carte, un plat se voit attribuer un numéro unique
+
+et un prix. Un plat peut être repris à la carte pendant plusieurs semaines. Pour les plats les
+
+moins communs, la manière de les préparer est décrite dans une recette. Celle-ci est
+
+caractérisée par une liste d’ingrédients, chacun apparaissant en une certaine quantité, ainsi
+
+que par un texte décrivant le procédé à suivre.
+
+Les serveurs servant en salle ont tous un prénom, un âge et un numéro spécifique. On
+
+connait également leur grade : responsable de table, de salle ou du bar.
+
+Tous les ingrédients, identifiés par leur nom, sont classés en deux grandes familles : celles
+
+des produits non-surgelés, et celle des produits surgelés. Chaque produit surgelé est
+
+caractérisé par sa date de surgélation, sa température minimum de conservation et la date
+
+limite de consommation. Les produits non-surgelés sont caractérisés par une liste des
+
+fournisseurs potentiels et sont séparés en deux groupes : les produits frais et les produits
+
+dits à conservation augmentée (ex : conserve, sous-vide,...). Pour les ingrédients frais, on
+
+doit connaitre la date d’achat et la date limite de fraicheur, pouvant être différente de sa
+
+date limite de consommation. En ce qui concerne les ingrédients à conservation augmentée,
+
+ils sont caractérisés par leur mode de conservation, la quantité standard de
+
+conditionnement pour une unité de l’ingrédient et une date extrême de consommation.
+
+Certains ingrédients peuvent aussi être répertoriés suivant s’ils sont un fruit et légume, ou
+
+s’ils sont une viande. Le chef veut toujours pouvoir connaitre le pays de provenance de
+
+chaque fruit et légume, leur taux de matière sèche et une durée de cuisson moyenne. Pour
+
+les viandes, il veut connaitre leur taux de matière grasse, le nombre de Kcal pour 100 gr de
+
+produit et un taux de protéines.
+
+Une recette est reproduite en cuisine sur une fiche numérotée ; un mnémonique est
+
+communément utilisé pour désigner chaque recette en cuisine. Pour chaque fournisseur, on
+
+connait sa dénomination, son adresse complète, une personne de contact, un numéro de
+
+TVA et un numéro de téléphone fixe et éventuellement des numéros de GSM pour les
+
+commandes urgentes. Il n’est pas possible de trouver deux fournisseurs partageant le même
+
+nom et la même adresse.
+
+Lorsqu’une commande provient d’une table, qui est désignée par un numéro, on connait sa
+
+date et un numéro lui est attribué par compostage. Pour chaque commande passée, il faut
+ 
+connaitre le nombre de plats commandés et la nature de chaque plat. Une commande peut-
+
+être prise en plusieurs fois. Dans ce cas, chaque sous-commande doit être distinguée par
+ 
+rapport aux autres, et on doit connaitre le serveur ayant pris la commande. Les serveurs
+
+"responsables de bar" ne peuvent pas prendre de commande. Pour chaque sous-commande,
+ 
+on doit également connaitre l’heure à laquelle elle a été passée par le(s) client(s). Deux sous-
+
+commandes ne peuvent pas être passées à la même heure hh:mm:ss.
+
+========================================================================================================
+
+16.Système d'information d'une société de location de voitures
+Dans le cas suivant, l’entièreté d’un système d’information est décrit, et pas uniquement sa base de
+données. C’est à vous de sélectionner les informations qui sont pertinentes pour créer le système
+d’information de cette société de location de voiture. Il faut donc faire la différence entre le
+traitement des données (réalisé au niveau applicatif) et leur stockage (fonction première d’une base
+de données).
+
+Une société de location de voitures souhaite informatiser son système de réservation et de
+facturation Cette société opère à partir d'une seule localisation. Les voitures sont prises et
+ramenées à cette localisation.
+Dans sa flotte de véhicules, la société dispose de plusieurs modèles. Afin de pouvoir au
+mieux satisfaire le client, la société considère qu'il est important de pouvoir lui fournir des
+renseignements sur les options disponibles sur certains modèles, comme la boîte à vitesse
+automatique, l'autoradio, 2 ou 5 portes, climatisation, ... Afin de standardiser ces options, la
+société leur a affecté en plus d'un libellé (texte libre) , un code unique. Outre ces
+informations, les modèles sont caractérisés et identifiés par une marque (ex: Ford, VW,
+Toyota, ...), un type (Ex: Escort, Golf; Corrola, ...) et une puissance. Ils sont groupés dans des
+classes de tarification. Chaque modèle référencé contient au moins une voiture. Une voiture
+est caractérisée par un numéro de véhicule propre à la société (et unique dans la société) sa
+date et son prix d'achat, s'il est en réparation ou en entretien la date de restitution prévue.
+Pour chaque classe de tarification, en plus d'un code identifiant, on connaît quels sont les
+contrats d'assurances souscrits pour les véhicules correspondants aux modèles couverts par
+cette classe. Un contrat d'assurance est caractérisé par un type (ex: bris de glace, vol,
+responsabilité civile, ...) et un assureur dont on connaît les coordonnées : nom, adresse, n°
+téléphone et n° fax (il n'existe pas deux assureurs ayant même nom et même adresse). Tous
+les contrats d'assurance d'un même type sont réalisés auprès d'un même assureur. Un
+assureur peut gérer plusieurs types de contrats.
+Trois formules de locations sont offertes au client :
+ la location à la journée (de l'heure H du jour J, à l'heure H du jour J+1)
+ la location à la semaine (de l'heure H du jour J de la semaine S à l'heure H du jour J
+de la semaine S+1)
+ la location de week-end (du Vendredi après 19 heures au Lundi avant 7H30)
+A chaque formule de location correspond un kilométrage forfaitaire. Celui-ci précise le
+nombre de kilomètres que le client peut effectuer sous le couvert du montant forfaitaire
+appliqué à ce mode location. Le kilométrage forfaitaire ne dépend que de la formule de
+location, tandis que le montant forfaitaire dépend non seulement du mode de location, mais
+également de la classe de tarification correspondante. A chaque classe de tarification est
+associé un prix au kilomètre, une amende journalière ainsi qu'un code unique. Le prix au
+
+kilomètre correspond au montant qui sera facturé au client pour chaque kilomètre qu'il aura
+parcouru au delà du kilométrage forfaitaire spécifié par la formule de location choisie.
+L'amende journalière correspond au supplément qui lui sera journellement facturé s'il ne
+restitue pas le véhicule à la date de restitution prévue.
+Un client est connu de la société par son nom, prénom et adresse, un numéro
+identifiant est attribué par compostage à chaque nouveau client.
+Lorsqu'un client s'adresse au service réservation, il spécifie ses différentes contraintes (ex:
+options souhaitées, modèle, formule de tarification, dates de retrait et restitution du
+véhicule). Par l'utilisation du système, l'employé devrait être capable de le renseigner sur la
+possibilité de répondre à sa demande en fonction de la disponibilité des véhicules. Il est
+évident que si cela s'avère impossible, le client peut réduire ses contraintes. Dans ce cas le
+processus de vérification est reconduit.
+Au terme de cette analyse, la liste des véhicules disponibles répondants aux desiderata du
+client lui est fournie. Elle stipule également, pour chaque véhicule, un prix indicatif1
+que le
+client est susceptible de payer pour la location, s'il ne dépasse le kilométrage maximum
+couvert par le tarif forfaitaire et s'il restitue le véhicule avant ou à la date prévue. Sur base
+de ces indications le client précise le véhicule qu'il désire louer. La réservation du véhicule
+(comprenant éventuellement la création d'un nouveau client) est alors enregistrée par
+l'employé, chaque nouvelle réservation se voit attribuer un numéro par compostage. Une
+réservation porte sur un seul véhicule, sur un seul mode de location et est relative à un seul
+client. A la fin de l'enregistrement de la réservation, le client reçoit un bon de réservation qui
+stipule ses choix (dates, véhicule et prix indicatif)
+Quand un client se présente, avec son bon de réservation, pour retirer un véhicule réservé,
+un réceptionniste du garage vérifie (de visu) que le véhicule est effectivement disponible. Il
+se peut en effet qu'un client ait omis de se présenter à la date de restitution prévue et que
+de ce fait, le véhicule promis (réservé) ne soit pas disponible.
+Si le véhicule est disponible, le réceptionniste procède à l'enregistrement de la location et à
+l'impression en double exemplaire d'un contrat de location que le client doit signer. Un
+exemplaire est remis au client avec les clefs du véhicule, tandis qu'un autre est archivé en fin
+de chaque journée. Sinon, le client est invité à se présenter au service de réservation ou la
+procédure de réservation est éventuellement reconduite (analyse de la demande et s'il y a
+lieu enregistrement d'une nouvelle réservation). Dans ce cas, il bénéficie d'un
+dédommagement équivalent à l'amende journalière prévue pour la catégorie de modèles à
+laquelle appartient le véhicule qu'il avait réservé. S'il est possible de lui fournir un véhicule, il
+peut alors retirer le véhicule réservé (et disponible) auprès du réceptionniste du garage.
+
+1 Ce prix indicatif est donc équivalent au montant forfaitaire correspondant à la formule de
+location choisie et à la classe de tarification à laquelle appartient le véhicule.
+
+L'enregistrement d'une location consiste à mémoriser le kilométrage du véhicule lors
+du retrait, le numéro de permis du conducteur et éventuellement le paiement de la caution.
+Une caution équivalente à 20 % du prix indicatif est demandée lors du retrait du véhicule. Si
+celle-ci n'est pas payée à ce moment, la facture est majorée d'un montant correspondant à 3
+% du prix indicatif.
+Lorsqu'un client se présente pour restituer un véhicule, un réceptionniste au garage
+vérifie l'état du véhicule et clôture la location : il stipule le kilométrage du véhicule lors de la
+restitution, la date effective de restitution et s'il y a lieu émet un message à destination de la
+personne responsable du service de gestion des réparations qui se chargera de la procédure
+à réaliser en cas de dommages aux véhicules (contact et suivi des assureurs, contact et suivi
+garages, contact des clients auxquels avaient été promis ce véhicules ). Il remet au client un
+formulaire stipulant les caractéristiques nécessaires à la clôture de la réservation
+(identification du véhicule et kilométrage courant).
+Après avoir restitué le véhicule, le client se présente, avec ce formulaire, au service
+des paiements. Ce service élabore la facture reproduite en deux exemplaires. Un exemplaire
+est remis au client tandis que l'autre est conservé dans le service. Les factures, non payées
+immédiatement, sont payables dans les 15 jours. La facturation doit respecter les règles
+stipulées dans l'énoncé. Elle doit tenir compte du paiement ou non de la caution, du
+montant forfaitaire correspondant à la réservation, du dédommagement éventuel (cas où la
+voiture réservée n'est pas disponible) et s'il y a lieu, des suppléments résultants d'une part
+du dépassement du kilométrage maximum couvert par le montant forfaitaire et d'autre part,
+de l'omission de restitution du véhicule à la date prévue. Il n'y a pas de réduction si le
+véhicule est :
+ restitué avant la date prévue, ou
+ retiré entre après la date de retrait prévue et la date de restitution prévue.
+Dans le cas où la société ne peut mettre un véhicule réservé à disposition du client et
+qu'il n'y a pas de nouvelle réservation, le dédommagement est tout de même dû au client.
+Le paiement de ce dédommagement n'est pas immédiat, il est effectué par le service de
+paiement en fin de semaine.
+Toute réservation peut être annulée par le client. L'annulation d'une réservation est
+prise en charge par le service de réservation. Elle ne donne pas lieu à une pénalisation
+financière si elle est réalisée au moins deux jours avant la date du retrait prévue. Sinon la
+pénalisation financière correspond au montant de la caution qui aurait été demandée. Le
+traitement des pénalisations d'annulation s'effectue également par le service de paiement
+en fin de semaine.
+On désire gérer les clients ainsi qu'un certain "historique" des réservations. Ainsi :
+ une réservation annulée par la volonté du client ne donne pas lieu à la suppression
+de la réservation dans le système d'information : on enregistre le fait qu'elle se
+trouve dans un état "supprimé" et sa date d'annulation.
+
+ une réservation annulée pour des raisons d'indisponibilité du véhicule (véhicule
+non remis ou en réparation) est dans un état "annulé". Dans ce cas on désire
+pouvoir retrouver l'éventuelle réservation qui a été faite en remplacement de la
+réservation annulée.
+ une réservation qui a donné lieu à la location d'un véhicule, est considérée comme
+"terminée" lors de la restitution du véhicule.
+ toute réservation non supprimée, non annulée ou non terminée est dans un état
+"effectif"
+Chaque fin mois, les réservations qui ont plus de 6 mois dans le S.I. sont réellement
+supprimées. On ne gère pas les demandes de réservation en attente (le client est invité à
+recontacter la société, s'il veut profiter de disponibilités nouvelles).
+ 
