@@ -1,0 +1,18 @@
+Colonne,Type
+Âge,Continue
+Revenu annuel,Continue
+Nombre d'enfants,Discrete
+Ville de résidence,Nominal
+Température,Continue
+Note d'examen,Continue/Ordinal
+Statut marital,Nominal
+Groupe sanguin,Nominal
+Poids,Continue
+Couleur des yeux,Nominal
+Code postal,Nominal
+Nombre de voitures,Discrete
+Satisfaction du service,Ordinal
+Nombre de visites à l'hôpital,Discrete
+Durée d'appel téléphonique,Continue
+Langue parlée,Nominale
+État civil,Nominale
