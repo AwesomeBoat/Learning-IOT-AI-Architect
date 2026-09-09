@@ -1,0 +1,46 @@
+import serial
+from datetime import datetime
+import paho.mqtt.client as mqtt
+import json
+
+PORT_SERIE = "/dev/ttyACM0"
+BAUD_RATE = 9600
+BROKER = "localhost"
+PORT = 1883
+TOPIC = "test/sensor"
+
+client = mqtt.Client()
+
+client.connect(BROKER, PORT, 60)
+
+def main():
+    with serial.Serial(PORT_SERIE, BAUD_RATE, timeout=2) as ligne_serie:
+        print("Connecté en série")
+        while True:
+            try:
+                print("debut try")
+                brut = ligne_serie.readline().decode("utf-8",errors="replace").strip()
+                print("brut lu")
+                if not brut:
+                    continue
+                
+                temperature, humidity = brut.split(",")
+                print(f"Temperature : {temperature}°C")
+                print(f"Humidity : {humidity} %")
+                message = {"timestamp" : datetime.now().isoformat(),
+                           "temperature" : temperature,
+                           "humidity" : humidity}
+                print("message, good")
+                # Publish
+                client.publish(TOPIC, json.dumps(message))
+                print(f"Message published : {message}")
+            except:
+                print("Erreur de lecture de la ligne")
+                break
+            
+if __name__ == "__main__":             
+    main()
+
+
+                
+    

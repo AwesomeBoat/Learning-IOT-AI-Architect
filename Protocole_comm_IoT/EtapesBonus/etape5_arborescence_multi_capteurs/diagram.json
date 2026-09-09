@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Formation Architecte IA/IoT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp32",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht22",
+      "top": -40,
+      "left": 350,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 90,
+      "left": 350,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 220,
+      "left": 350,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["esp32:TX0", "$serialMonitor:RX", "", []],
+    ["esp32:RX0", "$serialMonitor:TX", "", []],
+
+    ["dht22:VCC", "esp32:3V3", "red", []],
+    ["dht22:GND", "esp32:GND.1", "black", []],
+    ["dht22:SDA", "esp32:D4", "green", []],
+
+    ["pir1:VCC", "esp32:3V3", "red", []],
+    ["pir1:GND", "esp32:GND.2", "black", []],
+    ["pir1:OUT", "esp32:D2", "yellow", []],
+
+    ["ldr1:VCC", "esp32:3V3", "red", []],
+    ["ldr1:GND", "esp32:GND.1", "black", []],
+    ["ldr1:AO", "esp32:D34", "purple", []]
+  ]
+}

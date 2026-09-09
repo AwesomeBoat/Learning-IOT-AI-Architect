@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Formation Architecte IA/IoT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp32",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht22",
+      "top": -40,
+      "left": 350,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["esp32:TX0", "$serialMonitor:RX", "", []],
+    ["esp32:RX0", "$serialMonitor:TX", "", []],
+
+    ["dht22:VCC", "esp32:3V3", "red", []],
+    ["dht22:GND", "esp32:GND.1", "black", []],
+    ["dht22:SDA", "esp32:D4", "green", []]
+  ]
+}

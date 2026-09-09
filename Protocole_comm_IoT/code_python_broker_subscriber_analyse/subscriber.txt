@@ -1,0 +1,44 @@
+import json
+import os
+import paho.mqtt.client as mqtt
+
+BROKER = "localhost"
+PORT = 1883
+TOPIC = "test/sensor"
+FILE = "sensor_data.json"
+
+def on_connect(client, userdata, flags, rc):
+    print("Connected to MQTT broker")
+    client.subscribe(TOPIC)
+    
+def on_message(client, userdata, msg):
+    # Convert MQTT payload -> Python dictionary
+    data = json.loads(msg.payload.decode())
+    
+    print("Received:", data)
+    
+    # Create a file if doesn't exist
+    if os.path.exists(FILE):
+        with open(FILE, "r") as file:
+            sensor_data = json.load(file)
+    else:
+        sensor_data = []
+        
+         
+    # Add received message
+    sensor_data.append(data)
+    
+    # Save to json
+    with open(FILE, "w") as file:
+        json.dump(sensor_data, file, indent=4)
+        
+client = mqtt.Client()
+
+client.on_connect = on_connect
+client.on_message = on_message
+
+client.connect(BROKER, PORT, 60)
+
+print(f"Waiting for messages on {TOPIC}...")
+
+client.loop_forever()

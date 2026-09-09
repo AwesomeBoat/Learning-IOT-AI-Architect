@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Formation Architecte IA/IoT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp32",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 90,
+      "left": 350,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 120,
+      "left": 520,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 100,
+      "left": 600,
+      "attrs": { "color": "yellow" }
+    }
+  ],
+  "connections": [
+    ["esp32:TX0", "$serialMonitor:RX", "", []],
+    ["esp32:RX0", "$serialMonitor:TX", "", []],
+
+    ["pir1:VCC", "esp32:3V3", "red", []],
+    ["pir1:GND", "esp32:GND.2", "black", []],
+    ["pir1:OUT", "esp32:D2", "yellow", []],
+
+    ["esp32:D5", "r1:1", "orange", []],
+    ["r1:2", "led1:A", "orange", []],
+    ["led1:C", "esp32:GND.2", "black", []]
+  ]
+}
